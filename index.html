@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>8 週英文練習計畫</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+        system-ui, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px 28px 32px;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin-top: 24px;
+      margin-bottom: 12px;
+      font-size: 20px;
+      border-left: 4px solid #1976d2;
+      padding-left: 8px;
+    }
+
+    h3 {
+      margin-top: 20px;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    p.note {
+      margin-top: 0;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .task-list {
+      margin: 8px 0 12px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .task-list li {
+      margin: 4px 0;
+    }
+
+    label {
+      cursor: pointer;
+    }
+
+    .weeks {
+      margin-top: 16px;
+    }
+
+    .week-block {
+      margin-bottom: 24px;
+      padding: 16px;
+      border-radius: 10px;
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+    }
+
+    .week-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .week-subtitle {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+
+    table.week-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      table-layout: fixed;
+    }
+
+    table.week-table th,
+    table.week-table td {
+      border: 1px solid #e0e0e0;
+      padding: 6px 4px;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    table.week-table th {
+      background: #f0f4ff;
+      font-weight: 600;
+    }
+
+    .date-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .done-label {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .empty-cell {
+      background: #fbfbfb;
+    }
+
+    .small {
+      font-size: 12px;
+      color: #888;
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>8 週英文練習計畫</h1>
+    <p class="note">可以直接在瀏覽器中勾選，每天完成就打勾 ✅</p>
+
+    <h2>📌 每日固定任務（45–60 分鐘）</h2>
+    <ul class="task-list">
+      <li>
+        <label>
+          <input type="checkbox" id="task-speaking" />
+          20 分鐘口說（情境對話 / ChatGPT 練習）
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" id="task-vocab" />
+          10 分鐘單字
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" id="task-grammar" />
+          10 分鐘文法
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" id="task-listening" />
+          10–20 分鐘聽力
+        </label>
+      </li>
+    </ul>
+    <p class="small">（上面是「每日固定項目」範本，可以當天照著做；下面是每一天的完成記錄勾選）</p>
+
+    <div class="weeks">
+      <!-- Week 1 -->
+      <div class="week-block">
+        <div class="week-title">📅 Week 1（2025/11/21–2025/11/23）</div>
+        <div class="week-subtitle">僅包含週五～週日</div>
+        <table class="week-table">
+          <thead>
+            <tr>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="empty-cell"></td>
+              <td class="empty-cell"></td>
+              <td class="empty-cell"></td>
+              <td class="empty-cell"></td>
+              <td>
+                <span class="date-label">11/21</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-21" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">11/22</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-22" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">11/23</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-23" />
+                  Done
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="week-block">
+        <div class="week-title">📅 Week 2（2025/11/24–2025/11/30）</div>
+        <table class="week-table">
+          <thead>
+            <tr>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="date-label">11/24</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-24" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">11/25</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-25" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">11/26</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-26" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">11/27</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-27" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">11/28</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-28" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">11/29</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-29" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">11/30</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-11-30" />
+                  Done
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="week-block">
+        <div class="week-title">📅 Week 3（2025/12/01–2025/12/07）</div>
+        <table class="week-table">
+          <thead>
+            <tr>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="date-label">12/01</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-01" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/02</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-02" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/03</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-03" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/04</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-04" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/05</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-05" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/06</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-06" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/07</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-07" />
+                  Done
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Week 4 -->
+      <div class="week-block">
+        <div class="week-title">📅 Week 4（2025/12/08–2025/12/14）</div>
+        <table class="week-table">
+          <thead>
+            <tr>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="date-label">12/08</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-08" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/09</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-09" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/10</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-10" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/11</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-11" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/12</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-12" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/13</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-13" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/14</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-14" />
+                  Done
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Week 5 -->
+      <div class="week-block">
+        <div class="week-title">📅 Week 5（2025/12/15–2025/12/21）</div>
+        <table class="week-table">
+          <thead>
+            <tr>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="date-label">12/15</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-15" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/16</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-16" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/17</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-17" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/18</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-18" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/19</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-19" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/20</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-20" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/21</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-21" />
+                  Done
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Week 6 -->
+      <div class="week-block">
+        <div class="week-title">📅 Week 6（2025/12/22–2025/12/28）</div>
+        <table class="week-table">
+          <thead>
+            <tr>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="date-label">12/22</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-22" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/23</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-23" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/24</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-24" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/25</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-25" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/26</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-26" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/27</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-27" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/28</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-28" />
+                  Done
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Week 7 -->
+      <div class="week-block">
+        <div class="week-title">📅 Week 7（2025/12/29–2026/01/04）</div>
+        <table class="week-table">
+          <thead>
+            <tr>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="date-label">12/29</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-29" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/30</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-30" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">12/31</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2025-12-31" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/01</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-01" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/02</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-02" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/03</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-03" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/04</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-04" />
+                  Done
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Week 8 -->
+      <div class="week-block">
+        <div class="week-title">📅 Week 8（2026/01/05–2026/01/11）</div>
+        <table class="week-table">
+          <thead>
+            <tr>
+              <th>星期一</th>
+              <th>星期二</th>
+              <th>星期三</th>
+              <th>星期四</th>
+              <th>星期五</th>
+              <th>星期六</th>
+              <th>星期日</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <span class="date-label">01/05</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-05" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/06</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-06" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/07</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-07" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/08</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-08" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/09</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-09" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/10</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-10" />
+                  Done
+                </label>
+              </td>
+              <td>
+                <span class="date-label">01/11</span>
+                <label class="done-label">
+                  <input type="checkbox" id="day-2026-01-11" />
+                  Done
+                </label>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p class="small">
+      小提醒：勾選狀態只會存到你這台裝置的瀏覽器中，如果換電腦或清除瀏覽資料就會重置。
+    </p>
+  </div>
+
+  <script>
+    // 簡單的 localStorage 勾選狀態保存
+    (function () {
+      const STORAGE_KEY_PREFIX = "eng-plan-8weeks-";
+
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+      checkboxes.forEach((cb) => {
+        const key = STORAGE_KEY_PREFIX + cb.id;
+        if (key && localStorage.getItem(key) === "1") {
+          cb.checked = true;
+        }
+
+        cb.addEventListener("change", () => {
+          if (!cb.id) return;
+          const key = STORAGE_KEY_PREFIX + cb.id;
+          if (cb.checked) {
+            localStorage.setItem(key, "1");
+          } else {
+            localStorage.removeItem(key);
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
