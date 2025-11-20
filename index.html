@@ -713,29 +713,43 @@
   </div>
 
   <script>
-    // 簡單的 localStorage 勾選狀態保存
     (function () {
-      const STORAGE_KEY_PREFIX = "eng-plan-8weeks-";
+  const STORAGE_KEY_PREFIX = "eng-plan-8weeks-";
+  const API_URL = "https://script.google.com/macros/s/AKfycbxTzYuY9jjiH68ku_2c83CJjt2p05UxKwe4cQcZ_yyWTIgeK0Xv4v6nH_e37RKy3STQyQ/exec";
 
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
-      checkboxes.forEach((cb) => {
-        const key = STORAGE_KEY_PREFIX + cb.id;
-        if (key && localStorage.getItem(key) === "1") {
-          cb.checked = true;
-        }
+  // STEP 1：載入 localStorage 的資料
+  checkboxes.forEach((cb) => {
+    const key = STORAGE_KEY_PREFIX + cb.id;
+    if (localStorage.getItem(key) === "1") {
+      cb.checked = true;
+    }
+  });
 
-        cb.addEventListener("change", () => {
-          if (!cb.id) return;
-          const key = STORAGE_KEY_PREFIX + cb.id;
-          if (cb.checked) {
-            localStorage.setItem(key, "1");
-          } else {
-            localStorage.removeItem(key);
-          }
-        });
-      });
-    })();
+  // STEP 2：監聽所有 checkbox 的變化
+  checkboxes.forEach((cb) => {
+    cb.addEventListener("change", () => {
+      const key = STORAGE_KEY_PREFIX + cb.id;
+
+      // --- A. localStorage 保存 ---
+      if (cb.checked) {
+        localStorage.setItem(key, "1");
+      } else {
+        localStorage.removeItem(key);
+      }
+
+      // --- B. 寫入 Google Sheet ---
+      fetch(API_URL, {
+        method: "POST",
+        body: JSON.stringify({
+          checkboxId: cb.id,
+          checked: cb.checked,
+        }),
+      }).catch(err => console.error("Sheet API error:", err));
+    });
+  });
+})();
   </script>
 </body>
 </html>
