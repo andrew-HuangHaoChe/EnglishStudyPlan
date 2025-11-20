@@ -742,11 +742,17 @@
       // --- B. 寫入 Google Sheet ---
       fetch(API_URL, {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json"   // ⬅ 必須，否則 Apps Script 不會解析 JSON
+        },
         body: JSON.stringify({
           checkboxId: cb.id,
           checked: cb.checked,
         }),
-      }).catch(err => console.error("Sheet API error:", err));
+      })
+      .then(r => r.json())
+      .then(res => console.log("Sheet updated:", res))
+      .catch(err => console.error("Sheet API error:", err));
     });
   });
 })();
